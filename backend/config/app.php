@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' =>  env('TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Domain\Contact\Providers\ContactServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
