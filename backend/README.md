@@ -15,7 +15,7 @@ cd your_project_folder/backend
 ```
 Copy or move env.example to .env.
 ```sh
-cp env.example .env
+cp .env.example .env
 ```
 Install composer packages.
 ```sh

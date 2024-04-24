@@ -15,7 +15,7 @@ cd your_project_folder/frontend
 ```
 Copy or move env.example to .env.
 ```sh
-cp env.example .env
+cp .env.example .env
 ```
 Install node packages.
 ```sh
