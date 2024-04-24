@@ -55,37 +55,48 @@ const CreateUpdateContact = ({ label, buttonColor, data, fetchContacts }) => {
     const createContact = async () => {
         setDisabled(true);
 
-        await axios.post('api/contacts', formData)
-        .then(response => {
-            fetchContacts();
-            closeModal();
-        })
-        .catch(error => {
-            setTimeOutDisabled();
-            setErrors(error.response.data);
-        })
-        .finally(response => {
-            setTimeOutDisabled();
-            setFormData(initialData);
-        });
+        try {
+            await axios.post('api/contacts', formData)
+            .then(response => {
+                fetchContacts();
+                closeModal();
+
+                if (response.status === 200) {
+                    setFormData(initialData);
+                }
+            })
+            .catch(error => {
+                setTimeOutDisabled();
+                setErrors(error.response.data);
+            })
+            .finally(response => {
+                setTimeOutDisabled();
+            });
+        } catch (error) {
+            console.log(error.response);
+        }
     }
 
     const updateContact = async () => {
         setDisabled(true);
 
-        await axios.put('api/contacts/' + formData.id, formData)
-        .then(response => {
-            fetchContacts();
-            closeModal();
-        })
-        .catch(error => {
-            setTimeOutDisabled();
-            setErrors(error.response.data);
-        })
-        .finally(response => {
-            setTimeOutDisabled();
-            setFormData(initialData);
-        });
+        try {
+            await axios.put('api/contacts/' + formData.id, formData)
+            .then(response => {
+                fetchContacts();
+                closeModal();
+            })
+            .catch(error => {
+                setTimeOutDisabled();
+                setErrors(error.response.data);
+            })
+            .finally(response => {
+                setTimeOutDisabled();
+                setFormData(initialData);
+            });
+        } catch (error) {
+            console.log(error.response);
+        }
     }
 
     const setTimeOutDisabled = () => {
