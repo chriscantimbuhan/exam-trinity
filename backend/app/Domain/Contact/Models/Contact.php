@@ -45,4 +45,20 @@ class Contact extends Model
 
         return Cache::get('description')->get($this->getKey());
     }
+
+    /**
+     * Get full_name attribute
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        $name = $this->first_name . ' ' . $this->last_name;
+
+        if ($this->suffix) {
+            return $name . ' ' . $this->suffix;
+        }
+
+        return $name;
+    }
 }

@@ -19,6 +19,7 @@ class ContactResource extends Resource
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'suffix' => $this->suffix,
+            'full_name' => $this->full_name,
             'email' => $this->email,
             'address' => $this->address,
             'zip_code' => $this->zip_code,

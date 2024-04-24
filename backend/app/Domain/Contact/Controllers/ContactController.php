@@ -19,7 +19,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return response()->json(ContactResource::collection((new Contact)->get()));
+        return response()->json(ContactResource::collection(
+            (new Contact)->orderBy((new Contact)->getKeyName(), 'DESC')->get())
+        );
     }
 
     /**

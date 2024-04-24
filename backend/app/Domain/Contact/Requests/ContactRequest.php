@@ -27,12 +27,11 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => ['string', 'required'],
-            'last_name' => ['string', 'required'],
-            'suffix' => ['string'],
-            'email' => ['email', 'required', new UniqueField($this->route(Contact::ROUTE_KEY) ?? new Contact)],
-            'address' => ['string', 'required'],
-            'zip_code' => ['string', 'required']
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'email', new UniqueField($this->route(Contact::ROUTE_KEY) ?? new Contact)],
+            'address' => ['required', 'string'],
+            'zip_code' => ['required', 'string']
         ];
     }
 }
