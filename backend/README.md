@@ -13,7 +13,7 @@ Navigate to the project folder via terminal.
 ```sh
 cd your_project_folder/backend
 ```
-Copy or move env.sample to .env.
+Copy or move env.example to .env.
 ```sh
 cp env.example .env
 ```
