@@ -6,8 +6,6 @@
 
 - PHP 7.4^
 - SQLite
-- NodeJS v20.*
-- NPM v10.*
 - Composer v2.*
 
 ### Steps:
