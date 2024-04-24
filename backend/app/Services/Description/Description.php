@@ -15,7 +15,7 @@ class Description
      */
     public function getOne(Contact $contact)
     {
-        if (is_null(Cache::get('description')->get($contact->getKey()))) {
+        if (is_null(Cache::get('description')) || is_null(Cache::get('description')->get($contact->getKey()))) {
             try {
                 // Initialize cURL session
                 $curl = curl_init();
